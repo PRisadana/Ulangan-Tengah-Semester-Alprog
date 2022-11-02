@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void close(){
+    getchar();
+    printf("berikutnya...");
+    getchar();
+    system("clear");
+}
+
+int main(){
+    char matkul[100];
+    int semester;
+    char tahunajaran[100];
+    char nim[100];
+    char nama[100];
+    float nuts;
+    float nuas;
+    float np;
+
+    printf("Masukkan nama :  ");
+    scanf("%[^\n]s", &nama);
+    printf("Masukkan NIM : ");
+    scanf("%s", &nim);
+    printf("Masukkan Tahun ajaran : ");
+    scanf("%s", &tahunajaran);
+    printf("Masukkan semester : ");
+    scanf("%d", &semester);
+    close();
+
+    printf("Masukkan nilai uts : ");
+    scanf("%f", &nuts);
+    printf("Masukkan nilai uas : ");
+    scanf("%f", &nuas);
+    printf("Masukkan nilai praktek : ");
+    scanf("%f", &np);
+    close();
+
+    float nt = (0.4 * nuts + 0.6 * nuas);
+    float nilaiakhir = (0.75 * nt + 0.25 *np);
+
+    printf("\nNama : %s", nama);
+    printf("\nNIM : %s", nim);
+    printf("\nTahun ajaran : %s", tahunajaran);
+    printf("\nSemester : %d", semester);
+    printf("\nNilai akhir kamu adalah = %f", nilaiakhir); 
+
+
+    if (nilaiakhir >85 && nilaiakhir<=100){
+        printf("\n\t========================================================");
+        printf("\n\t||                     Grade A                        ||");
+        printf("\n\t========================================================");
+    }else if (nilaiakhir >=75 && nilaiakhir <=85){
+        printf("\n\t========================================================");
+        printf("\n\t||                     Grade B                        ||");
+        printf("\n\t========================================================");
+    }else if (nilaiakhir >=60 && nilaiakhir <=74){
+        printf("\n\t========================================================");
+        printf("\n\t||                    Grade C                         ||");
+        printf("\n\t========================================================");
+    }else if (nilaiakhir >=40 && nilaiakhir <=59){
+        printf("\n\t========================================================");
+        printf("\n\t||                    Grade D                         ||");
+        printf("\n\t========================================================");
+    }else if (nilaiakhir >=0 && nilaiakhir <=40){
+        printf("\n\t========================================================");
+        printf("\n\t||                     Grade E                        ||");
+        printf("\n\t========================================================");
+    }else{
+        main();
+    }
+}
