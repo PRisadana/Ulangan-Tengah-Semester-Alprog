@@ -26,15 +26,39 @@ int main(){
     printf("Masukkan Tahun ajaran : ");
     scanf("%s", &tahunajaran);
     printf("Masukkan semester : ");
-    scanf("%d", &semester);
+    while(scanf("%d", &semester) == 0 || semester < 0){
+        printf ("\nKarakter yang anda inputkan salah");
+        printf ("\nInputkan berupa angka");
+        printf ("\n--------------------------------------------");
+        printf("Masukkan semester : ");
+        while(semester = getchar() != '\n' );
+    }
     close();
 
     printf("Masukkan nilai uts : ");
-    scanf("%f", &nuts);
+    while(scanf("%2.f", &nuts) == 0 || nuts < 0 || nuts > 100){
+        printf ("\nKarakter yang anda inputkan salah");
+        printf ("\nInputkan berupa angka");
+        printf ("\n--------------------------------------------");
+        printf("Masukkan nilai uts : ");
+        while(nuts = getchar() != '\n' );
+    }
     printf("Masukkan nilai uas : ");
-    scanf("%f", &nuas);
+   while(scanf("%2.f", &nuas) == 0 || nuas < 0 || nuas > 100){
+        printf ("\nKarakter yang anda inputkan salah");
+        printf ("\nInputkan berupa angka");
+        printf ("\n--------------------------------------------");
+        printf("Masukkan nilai uas : ");
+        while(nuas = getchar() != '\n' );
+    }
     printf("Masukkan nilai praktek : ");
-    scanf("%f", &np);
+    while(scanf("%2.f", &np) == 0 || np < 0 || np > 100){
+        printf ("\nKarakter yang anda inputkan salah");
+        printf ("\nInputkan berupa angka");
+        printf ("\n--------------------------------------------");
+        printf("Masukkan nilai uts : ");
+        while(np = getchar() != '\n' );
+    }
     close();
 
     float nt = (0.4 * nuts + 0.6 * nuas);
